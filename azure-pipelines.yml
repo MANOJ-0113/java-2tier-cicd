@@ -23,3 +23,8 @@ steps:
     cd terraform
     terraform plan
   displayName: Terraform Plan
+
+- script: |
+    cd terraform
+    terraform apply --auto-approve
+  displayName: Terraform apply
