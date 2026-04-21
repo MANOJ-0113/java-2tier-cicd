@@ -2,12 +2,11 @@ trigger:
 - master
 
 pool:
-  name: my-linux-agent
+  name: Default
 
 steps:
 
-- script: |
-    terraform version
+- script: terraform version
   displayName: Check Terraform
 
 - script: |
