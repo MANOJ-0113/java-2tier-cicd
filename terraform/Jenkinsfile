@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                 url: 'https://github.com/MANOJ-0113/java-2tier-cicd.git'
             }
         }
