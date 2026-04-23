@@ -3,34 +3,27 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'master',
-                url: 'https://github.com/MANOJ-0113/java-2tier-cicd.git'
-            }
-        }
-
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                sh 'cd terraform && terraform init'
             }
         }
 
         stage('Terraform Validate') {
             steps {
-                sh 'terraform validate'
+                sh 'cd terraform && terraform validate'
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan'
+                sh 'cd terraform && terraform plan'
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve'
+                sh 'cd terraform && terraform apply -auto-approve'
             }
         }
     }
